@@ -25,3 +25,23 @@ The dataset includes 7 tables: `customers`, `geolocation`, `order_items`, `order
 1. **Clone the Repo:**
    ```bash
    git clone [https://github.com/gouravpatidar326/Ecommerce-Sales-Analysis.git](https://github.com/gouravpatidar326/Ecommerce-Sales-Analysis.git)
+   
+2. Install Dependencies
+Ensure you have Python installed, then run:
+
+Bash
+pip install -r requirements.txt
+
+3. Database Configuration
+Open MySQL Workbench (or your preferred SQL client) and ensure your server is running.
+
+Open notebooks/CSV_to_SQL.ipynb.
+
+Locate the mysql.connector.connect() block and update the user and password to match your local MySQL credentials.
+
+4. Execution Order
+To successfully reproduce the analysis, run the notebooks in this order:
+
+CSV_to_SQL.ipynb: This script reads the CSV data and populates your MySQL database.
+
+Ecommerce_Sales.ipynb: This script performs the SQL queries and generates visualizations.
