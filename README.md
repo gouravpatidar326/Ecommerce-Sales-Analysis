@@ -1,47 +1,56 @@
-# 🛒 E-commerce Sales Analysis: SQL & Python Pipeline
-
+🛒 E-commerce Sales Analysis: SQL & Python Pipeline
 An end-to-end data engineering and analysis project. This project automates the migration of raw e-commerce data from CSV files into a MySQL database and provides deep-dive business insights using SQL window functions and Python visualizations.
 
-## 📂 Project Structure
-- `notebooks/`
-    - `CSV_to_SQL.ipynb`: Python script for ETL (Extract, Transform, Load) to MySQL.
-    - `Ecommerce_Sales.ipynb`: SQL-based analysis and Seaborn/Matplotlib visualizations.
-- `requirements.txt`: List of necessary Python libraries.
-- `data/`: Contains sample datasets (full data hosted externally).
+📂 Project Structure
+notebooks/
 
-## 📊 Dataset
-Due to the large size (100MB+), the full dataset is hosted on Google Drive.
-- **[Download Full Dataset Here](https://drive.google.com/drive/folders/1pwsltDrJ2OfskANWtcNQ2xjSlhbusQk_?usp=drive_link)**
+CSV_to_SQL.ipynb: Python script for ETL (Extract, Transform, Load) to MySQL.
 
-The dataset includes 7 tables: `customers`, `geolocation`, `order_items`, `orders`, `payments`, `products`, and `sellers`.
+Ecommerce_Sales.ipynb: SQL-based analysis and Seaborn/Matplotlib visualizations.
 
-## 🚀 Key Features
-- **Automated Schema Mapping:** The ETL script dynamically detects data types to create MySQL tables automatically.
-- **Advanced SQL Queries:** - Used `DENSE_RANK()` and Window Functions to identify top-spending customers.
-  - Calculated year-over-year sales growth and order distribution by city.
-- **Data Visualization:** Created bar plots and trend lines to visualize customer behavior and payment patterns.
+requirements.txt: List of necessary Python libraries.
 
-## 🛠️ Installation & Setup
-1. **Clone the Repo:**
-   ```bash
-   git clone [https://github.com/gouravpatidar326/Ecommerce-Sales-Analysis.git](https://github.com/gouravpatidar326/Ecommerce-Sales-Analysis.git)
-   
+📊 Dataset Information
+Due to the file size (100MB+), the datasets are hosted externally. You must download them to run the analysis locally.
+
+Full Dataset: Download from Google Drive - https://drive.google.com/drive/folders/1pwsltDrJ2OfskANWtcNQ2xjSlhbusQk_?usp=drive_link
+
+Tables included: customers, geolocation, order_items, orders, payments, products, and sellers.
+
+🚀 Key Features
+Automated Schema Mapping: The ETL script dynamically detects pandas data types to generate and execute CREATE TABLE statements in MySQL automatically.
+
+Advanced SQL Analytics: - Utilized DENSE_RANK() and Window Functions to identify top-spending customers per year.
+
+Calculated year-over-year sales growth and geographic order distribution.
+
+Data Visualization: Integrated Seaborn and Matplotlib to visualize payment trends and customer segmentation directly from SQL query results.
+
+🛠️ Installation & Setup
+1. Clone the Repo
+Bash
+git clone https://github.com/gouravpatidar326/Ecommerce-Sales-Analysis.git
+cd Ecommerce-Sales-Analysis
 2. Install Dependencies
-Ensure you have Python installed, then run:
-
 Bash
 pip install -r requirements.txt
+3. Data Setup (Important)
+Create a folder named data in the project root directory.
 
-3. Database Configuration
-Open MySQL Workbench (or your preferred SQL client) and ensure your server is running.
+Download the CSV files from the Google Drive Link.
+
+Place all 7 CSV files inside the data/ folder.
+
+4. Database Configuration
+Ensure your MySQL server is running.
 
 Open notebooks/CSV_to_SQL.ipynb.
 
-Locate the mysql.connector.connect() block and update the user and password to match your local MySQL credentials.
+Locate the mysql.connector.connect() block and update the host, user, and password to match your local MySQL credentials.
 
-4. Execution Order
-To successfully reproduce the analysis, run the notebooks in this order:
+5. Execution Order
+To reproduce the analysis, run the notebooks in this order:
 
-CSV_to_SQL.ipynb: This script reads the CSV data and populates your MySQL database.
+CSV_to_SQL.ipynb: Processes the CSVs and populates your MySQL database.
 
-Ecommerce_Sales.ipynb: This script performs the SQL queries and generates visualizations.
+Ecommerce_Sales.ipynb: Runs the analytical queries and generates visualizations.
